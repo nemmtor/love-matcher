@@ -1,11 +1,15 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 
-function App() {
+import Layout from './Layout';
+import Landing from './Landing';
+import Result from './Result';
+
+export default function App() {
   return (
-    <div className="App">
-      <h1>Hi</h1>
-    </div>
+    <Layout>
+      <Route exact path="/" component={Landing} />
+      <Route path="/result" component={Result} />
+    </Layout>
   );
 }
-
-export default App;
