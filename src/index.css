@@ -30,6 +30,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 1rem;
+  padding: 3rem 1rem;
   position: relative;
 }

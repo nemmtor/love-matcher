@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Content = styled.main`
-  margin-top: 2rem;
+  margin: 1rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,6 +11,11 @@ export const Title = styled.header`
   font-family: Rubik;
   color: ${(props) => props.theme.colors.pink};
   text-align: center;
+  letter-spacing: 2px;
+
+  h1 {
+    margin: 0;
+  }
 `;
 
 export const Footer = styled.footer`

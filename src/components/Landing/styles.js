@@ -1,12 +1,8 @@
 import styled from 'styled-components';
 
-export const Subtitle = styled.h2`
-  text-align: center;
-  color: ${(props) => props.theme.colors.dark1};
-`;
-
 export const Text = styled.p`
   text-align: center;
+  line-height: 1.4;
 `;
 
 export const LoveForm = styled.form`
@@ -16,9 +12,10 @@ export const LoveForm = styled.form`
   flex-direction: column;
   align-items: center;
   padding: 2rem 1rem;
-  border-radius: 10px;
+  border-radius: 8px;
   margin-top: 1rem;
   color: ${(props) => props.theme.colors.dark1};
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.5), 0px 3px 2px rgba(0,0,0,0.5);
 `;
 
 export const LoveFormLabel = styled.label`
@@ -44,12 +41,12 @@ export const HeartImgContainer = styled.div`
 
 export const HeartImg = styled.img`
   will-change: transform, filter;
-  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+  transition: transform 0.2s ease-in, filter 0.2s ease-out;
 `;
 
 export const LoveInputContainer = styled.div`
   position: relative;
-  width: 80%;
+  width: 70%;
   margin-top: 0.5rem;
 `;
 
@@ -57,6 +54,7 @@ export const LoveFormInput = styled.input`
   background: transparent;
   border: none;
   display: flex;
+  color: ${props => props.theme.colors.dark1};
   max-width: 100%;
   align-items: center;
   justify-content: center;
@@ -64,25 +62,42 @@ export const LoveFormInput = styled.input`
   outline: none;
   padding: 0.5rem 2rem;
   &:focus ~ ${HeartImgContainer} ${HeartImg} {
-    transform: scale(1.4);
+    transform: scale(1.2) rotate(360deg);
     filter: brightness(1.1);
   }
 `;
 
 export const LoveFormSubmit = styled.button`
-  background: ${(props) => props.theme.colors.light2};
-  padding: 0.8rem 1.2rem;
-  border: none;
-  outline: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  border-radius: 10px;
-  margin-top: 2.5rem;
-  color: ${(props) => props.theme.colors.dark1};
-`;
+         background: ${(props) => props.theme.colors.light2};
+         padding: 0.8rem 1.2rem;
+         border: none;
+         outline: none;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-weight: bold;
+         border-radius: 10px;
+         margin-top: 2.5rem;
+         color: ${(props) => props.theme.colors.dark1};
+         cursor: pointer;
+         will-change: color;
+         transition: color .3s ease;
 
-export const FireImg = styled.img`
-  margin-right: 0.5rem;
-`;
+         &:hover, &:focus {
+           color: ${(props) => props.theme.colors.pink};
+           path {
+             fill: ${(props) => props.theme.colors.pink};
+           }
+         }
+       `;
+
+export const FireImg = styled.svg`
+         margin-right: 0.5rem;
+         width: 16px;
+         height: 20px;
+         path {
+           fill: #44001a;
+           will-change: fill;
+           transition: fill .3s ease;
+         }
+       `;
