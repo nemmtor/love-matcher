@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
 export const Content = styled.main`
-  margin: 1rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+         margin: 1rem 0;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         min-height: 70vh;
+       `;
 
 export const Title = styled.header`
   font-family: Rubik;

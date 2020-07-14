@@ -54,7 +54,7 @@ export const LoveFormInput = styled.input`
   background: transparent;
   border: none;
   display: flex;
-  color: ${props => props.theme.colors.dark1};
+  color: ${(props) => props.theme.colors.dark1};
   max-width: 100%;
   align-items: center;
   justify-content: center;
@@ -62,7 +62,7 @@ export const LoveFormInput = styled.input`
   outline: none;
   padding: 0.5rem 2rem;
   &:focus ~ ${HeartImgContainer} ${HeartImg} {
-    transform: scale(1.2) rotate(360deg);
+    transform: scale(1.2);
     filter: brightness(1.1);
   }
 `;

@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {useHistory} from 'react-router-dom'
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import {
   FireImg,
@@ -18,20 +18,20 @@ import heart from '../../assets/heart.svg';
 export default function Landing() {
   const history = useHistory();
 
-  const [name1,setName1] = useState('');
-  const [name2,setName2] = useState('');
+  const [name1, setName1] = useState('');
+  const [name2, setName2] = useState('');
 
   const handleChange = (e) => {
-    if(e.target.name === 'name1') {
+    if (e.target.name === 'name1') {
       setName1(e.target.value);
     } else {
       setName2(e.target.value);
     }
-  }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    history.push(`/result?name1=${name1}&name2=${name2}`)
+    history.push(`/result?name1=${name1}&name2=${name2}`);
   };
   return (
     <LoveForm onSubmit={handleSubmit}>
