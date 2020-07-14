@@ -1,3 +1,23 @@
+@font-face {
+  font-family: Rubik;
+  src: local('Rubik'), url(./fonts/Rubik-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: Karla;
+  src: local('Karla'), url(./fonts/Karla-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: Karla;
+  src: local('Karla'), url(./fonts/Karla-Bold.ttf) format('truetype');
+  font-weight: bold;
+}
+
+html {
+  font-family: Karla, sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,11 +25,11 @@
 }
 
 body {
-  height: 100vh;
-  background: #EDBFC6;
+  min-height: 100vh;
+  background: #edbfc6;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3rem 2rem;
+  padding: 2rem 1rem;
+  position: relative;
 }
-

@@ -21,8 +21,8 @@
   },
   "eslintConfig": {
     "extends": [
-      "prettier",
       "airbnb",
+      "prettier",
       "react-app"
     ],
     "plugins": [
@@ -30,6 +30,10 @@
     ],
     "rules": {
       "react/prop-types": 0,
+      "linebreak-style": [
+        "error",
+        "windows"
+      ],
       "react/jsx-filename-extension": [
         1,
         {
