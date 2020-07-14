@@ -1,15 +1,24 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Text = styled.p`
          text-align: center;
          color: ${(props) => props.theme.colors.dark2};
        `;
 
+export const Names = styled.p`
+         text-align: center;
+         font-weight: 700;
+         letter-spacing: 1px;
+         color: ${(props) => props.theme.colors.dark1};
+         margin-bottom: 1rem;
+         font-size: 1.4rem;
+       `;
+
 export const ScoreContainer = styled.div`
          display: flex;
          flex-direction: column;
          align-items: center;      
-         margin: 2.5rem 0;
+         margin: 2rem 0 3rem;
 
          img {
            height: 60px;
@@ -32,7 +41,6 @@ export const BackButton = styled.button`
          outline: none;
          border: none;
          background: ${(props) => props.theme.colors.light1};
-         margin-top: 2rem;
          padding: 0.8rem 1.2rem;
          border-radius: 10px;
          cursor: pointer;

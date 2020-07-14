@@ -6,7 +6,6 @@ export const Content = styled.main`
          flex-direction: column;
          align-items: center;
          justify-content: center;
-         min-height: 70vh;
        `;
 
 export const Title = styled.header`
@@ -14,6 +13,7 @@ export const Title = styled.header`
   color: ${(props) => props.theme.colors.pink};
   text-align: center;
   letter-spacing: 2px;
+  margin-top: 2rem;
 
   h1 {
     margin: 0;
@@ -22,10 +22,6 @@ export const Title = styled.header`
 
 export const Footer = styled.footer`
   font-family: Rubik;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
   text-align: center;
   background: ${(props) => props.theme.colors.dark1};
   color: ${(props) => props.theme.colors.light2};

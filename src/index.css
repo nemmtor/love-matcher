@@ -16,6 +16,7 @@
 
 html {
   font-family: Karla, sans-serif;
+  height: 100%;
 }
 
 * {
@@ -25,11 +26,14 @@ html {
 }
 
 body {
-  min-height: 100vh;
+  height: 100%;
+}
+
+#root {
+  min-height: 100%;
   background: #edbfc6;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 3rem 1rem;
   position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
 }

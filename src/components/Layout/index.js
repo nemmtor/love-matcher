@@ -7,6 +7,7 @@ export default function Layout({ children }) {
     <>
       <Title>
         <h1>LOVE MATCHER</h1>
+        <p>Find perfect partner!</p>
       </Title>
       <Content>{children}</Content>
       <Footer>Made with ❤ by Kacper Witas</Footer>
