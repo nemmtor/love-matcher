@@ -29,6 +29,16 @@ export default function Landing() {
     }
   };
 
+  const handleFocus = (e) => {
+    const parent = e.target.parentElement;
+    parent.classList.add('focused');
+  };
+
+  const handleBlur = (e) => {
+    const parent = e.target.parentElement;
+    parent.classList.remove('focused');
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     history.push(`/result?name1=${name1}&name2=${name2}`);
@@ -47,6 +57,8 @@ export default function Landing() {
             autoComplete="off"
             value={name1}
             onChange={handleChange}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
           />
           <HeartImgContainer>
             <HeartImg src={heart} alt="Heart" />
@@ -64,6 +76,8 @@ export default function Landing() {
             autoComplete="off"
             value={name2}
             onChange={handleChange}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
           />
           <HeartImgContainer>
             <HeartImg src={heart} alt="Heart" />

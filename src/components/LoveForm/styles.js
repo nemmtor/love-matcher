@@ -29,14 +29,15 @@ export const LoveFormLabel = styled.label`
 export const HeartImgContainer = styled.div`
   position: absolute;
   width: 2.4rem;
-  height: 2.4rem;
   border-radius: 50%;
   background: #fff;
-  bottom: 0;
+  bottom: -1px;
+  top: -1px;
   left: -1rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 `;
 
 export const HeartImg = styled.img`
@@ -48,6 +49,42 @@ export const LoveInputContainer = styled.div`
   position: relative;
   width: 70%;
   margin-top: 0.5rem;
+  z-index: 1;
+  &::before {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    content: '';
+    background: #fff;
+    height: 1px;
+    width: 100%;
+    will-change: transform;
+    transition: transform 0.2s linear;
+  }
+  &::after {
+    bottom: 50%;
+    left: 0;
+    position: absolute;
+    content: '';
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transform: translateY(50%) scaleX(0);
+    will-change: transform;
+    transition: transform 0.2s linear;
+    transform-origin: left;
+    border-radius: 0 20px 20px 0;
+  }
+
+  &.focused {
+    &::before {
+      transform: scaleX(0);
+    }
+    &::after {
+      transform: translateY(50%) scaleX(1);
+    }
+  }
 `;
 
 export const LoveFormInput = styled.input`
@@ -58,10 +95,11 @@ export const LoveFormInput = styled.input`
   max-width: 100%;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid #fff;
   outline: none;
   padding: 0.5rem 2rem;
   transition: transform 0.3s ease;
+  z-index: 100;
+  text-align: center;
   &:focus ~ ${HeartImgContainer} ${HeartImg} {
     transform: scale(1.2);
     filter: brightness(0.9);
