@@ -15,7 +15,7 @@ export const LoveForm = styled.form`
   border-radius: 8px;
   margin-top: 1rem;
   color: ${(props) => props.theme.colors.dark1};
-  box-shadow: 0px 5px 10px rgba(0,0,0,0.5), 0px 3px 2px rgba(0,0,0,0.5);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5), 0px 3px 2px rgba(0, 0, 0, 0.5);
 `;
 
 export const LoveFormLabel = styled.label`
@@ -61,43 +61,48 @@ export const LoveFormInput = styled.input`
   border-bottom: 1px solid #fff;
   outline: none;
   padding: 0.5rem 2rem;
+  transition: transform 0.3s ease;
   &:focus ~ ${HeartImgContainer} ${HeartImg} {
     transform: scale(1.2);
-    filter: brightness(1.1);
+    filter: brightness(0.9);
+  }
+  &:focus {
+    border-bottom: 1px solid ${(props) => props.theme.colors.pink};
   }
 `;
 
 export const LoveFormSubmit = styled.button`
-         background: ${(props) => props.theme.colors.light2};
-         padding: 0.8rem 1.2rem;
-         border: none;
-         outline: none;
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         font-weight: bold;
-         border-radius: 10px;
-         margin-top: 2.5rem;
-         color: ${(props) => props.theme.colors.dark1};
-         cursor: pointer;
-         will-change: color;
-         transition: color .3s ease;
+  background: ${(props) => props.theme.colors.light2};
+  padding: 0.8rem 1.2rem;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-top: 2.5rem;
+  color: ${(props) => props.theme.colors.dark1};
+  cursor: pointer;
+  will-change: color;
+  transition: color 0.3s ease;
 
-         &:hover, &:focus {
-           color: ${(props) => props.theme.colors.pink};
-           path {
-             fill: ${(props) => props.theme.colors.pink};
-           }
-         }
-       `;
+  &:hover,
+  &:focus {
+    color: ${(props) => props.theme.colors.pink};
+    path {
+      fill: ${(props) => props.theme.colors.pink};
+    }
+  }
+`;
 
 export const FireImg = styled.svg`
-         margin-right: 0.5rem;
-         width: 16px;
-         height: 20px;
-         path {
-           fill: #44001a;
-           will-change: fill;
-           transition: fill .3s ease;
-         }
-       `;
+  margin-right: 0.5rem;
+  width: 16px;
+  height: 20px;
+  path {
+    fill: #44001a;
+    will-change: fill;
+    transition: fill 0.3s ease;
+  }
+`;
