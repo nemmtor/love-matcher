@@ -66,9 +66,6 @@ export const LoveFormInput = styled.input`
     transform: scale(1.2);
     filter: brightness(0.9);
   }
-  &:focus {
-    border-bottom: 1px solid ${(props) => props.theme.colors.pink};
-  }
 `;
 
 export const LoveFormSubmit = styled.button`
@@ -85,11 +82,12 @@ export const LoveFormSubmit = styled.button`
   color: ${(props) => props.theme.colors.dark1};
   cursor: pointer;
   will-change: color;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 
   &:hover,
   &:focus {
     color: ${(props) => props.theme.colors.pink};
+    transform: translateY(-3px);
     path {
       fill: ${(props) => props.theme.colors.pink};
     }
