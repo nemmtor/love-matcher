@@ -35,10 +35,7 @@
     "rules": {
       "prettier/prettier": "error",
       "react/prop-types": 0,
-      "linebreak-style": [
-        "error",
-        "windows"
-      ],
+      "linebreak-style": 0,
       "react/jsx-filename-extension": [
         1,
         {
