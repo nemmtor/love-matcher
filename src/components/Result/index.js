@@ -36,19 +36,18 @@ export default function Result({ location }) {
         setResult(rating);
         setIsLoading(false);
       } catch (error) {
-        setIsLoading(false);
         setIsError(true);
+        setIsLoading(false);
       }
     };
     fetchData();
   }, [name1, name2]);
 
-  if (isError) return <ShowError handleClick={routeToRoot} />;
-
   return (
     <>
-      {isLoading && <Loading />}
-      {!isLoading && (
+      {isLoading && !isError && <Loading />}
+      {isError && !isLoading && <ShowError handleClick={routeToRoot} />}
+      {!isLoading && !isError && (
         <>
           <Names>
             {getNiceName(name1)} &amp; {getNiceName(name2)}
