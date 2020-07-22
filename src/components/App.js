@@ -10,8 +10,12 @@ export default function App() {
   return (
     <Layout>
       <Switch>
-        <Route exact path="/" component={LoveForm} />
-        <Route exact path="/result" component={Result} />
+        <Route exact path={`${process.env.PUBLIC_URL}/`} component={LoveForm} />
+        <Route
+          exact
+          path={`${process.env.PUBLIC_URL}/result`}
+          component={Result}
+        />
         <Route component={Error} />
       </Switch>
     </Layout>
