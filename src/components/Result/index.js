@@ -8,7 +8,13 @@ import Loading from '../Loading';
 import { BackButton, Names, ScoreContainer, Text } from './styles';
 import ShowError from './ShowError';
 
+const getNiceName = (name) => {
+  return name[0].toUpperCase() + name.substring(1).toLowerCase();
+};
+
 export default function Result({ location }) {
+  const { name1, name2 } = queryString.parse(location.search);
+
   const history = useHistory();
 
   const routeToRoot = () => {
@@ -16,15 +22,28 @@ export default function Result({ location }) {
   };
 
   const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
+  const [result, setResult] = useState('');
 
   useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-  }, []);
+    const fetchData = async () => {
+      try {
+        const url = `https://love-matcher-api.herokuapp.com/match?name1=${name1}&name2=${name2}`;
+        const response = await fetch(url);
+        if (response.status !== 200) throw new Error('error');
+        const jsonResponse = await response.json();
+        const { rating } = jsonResponse;
+        setResult(rating);
+        setIsLoading(false);
+      } catch (error) {
+        setIsLoading(false);
+        setIsError(true);
+      }
+    };
+    fetchData();
+  }, [name1, name2]);
 
-  const { name1, name2 } = queryString.parse(location.search);
-  if (!name1 || !name2) return <ShowError handleClick={routeToRoot} />;
+  if (isError) return <ShowError handleClick={routeToRoot} />;
 
   return (
     <>
@@ -32,14 +51,12 @@ export default function Result({ location }) {
       {!isLoading && (
         <>
           <Names>
-            {`${name1[0].toUpperCase() + name1.substring(1).toLowerCase()}
-             &
-            ${name2[0].toUpperCase() + name2.substring(1).toLowerCase()}`}
+            {getNiceName(name1)} &amp; {getNiceName(name2)}
           </Names>
           <Text>Your match rating is</Text>
           <ScoreContainer>
             <img src={fire} alt="fire" />
-            <Text>100%</Text>
+            <Text>{`${result * 100}%`}</Text>
             <Text>You should get married!</Text>
           </ScoreContainer>
           <BackButton type="Button" onClick={routeToRoot}>
