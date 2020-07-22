@@ -1,6 +1,5 @@
 {
   "name": "love-matcher",
-  "homepage": "https://nemmtor.github.io/love-matcher",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
