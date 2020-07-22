@@ -31,9 +31,7 @@ export default function Landing() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const { name1, name2 } = inputValues;
-    history.push(
-      `${process.env.PUBLIC_URL}/result?name1=${name1}&name2=${name2}`,
-    );
+    history.push(`/result?name1=${name1}&name2=${name2}`);
   };
 
   // TODO: Write own hook which will handle both focus nad blur
