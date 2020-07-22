@@ -18,21 +18,33 @@ import heart from '../../assets/heart.svg';
 export default function Landing() {
   const history = useHistory();
 
-  const [name1, setName1] = useState('');
-  const [name2, setName2] = useState('');
+  const [inputValues, setInputValues] = useState({ name1: '', name2: '' });
 
   const handleChange = (e) => {
-    if (e.target.name === 'name1') {
-      setName1(e.target.value);
-    } else {
-      setName2(e.target.value);
-    }
+    const { name, value } = e.target;
+    setInputValues((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const { name1, name2 } = inputValues;
     history.push(`/result?name1=${name1}&name2=${name2}`);
   };
+
+  // TODO: Write own hook which will handle both focus nad blur
+  const handleFocus = (e) => {
+    const parent = e.target.parentElement;
+    parent.classList.add('focused');
+  };
+
+  const handleBlur = (e) => {
+    const parent = e.target.parentElement;
+    parent.classList.remove('focused');
+  };
+
   return (
     <LoveForm onSubmit={handleSubmit}>
       <Text>Type in your name and name of your crush</Text>
@@ -45,8 +57,10 @@ export default function Landing() {
             id="name1"
             name="name1"
             autoComplete="off"
-            value={name1}
+            value={inputValues.name1}
             onChange={handleChange}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
           />
           <HeartImgContainer>
             <HeartImg src={heart} alt="Heart" />
@@ -62,8 +76,10 @@ export default function Landing() {
             id="name2"
             name="name2"
             autoComplete="off"
-            value={name2}
+            value={inputValues.name2}
             onChange={handleChange}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
           />
           <HeartImgContainer>
             <HeartImg src={heart} alt="Heart" />
