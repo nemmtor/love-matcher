@@ -27,7 +27,7 @@ export default function Result({
           <Text>Your match rating is</Text>
           <ScoreContainer>
             <img src={fireIcon} alt="fire" />
-            <Text>{`${result.rating * 100}%`}</Text>
+            <Text>{`${Math.ceil(result.rating * 100)}%`}</Text>
             <Text>{result.message}</Text>
           </ScoreContainer>
           <BackButton type="Button" onClick={routeToRoot}>
