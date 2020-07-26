@@ -12,6 +12,7 @@ const Pulse = keyframes`
 const Text = styled.h2`
   text-align: center;
   margin-bottom: 4rem;
+  color: ${(props) => props.theme.colors.pink};
 `;
 
 const PulsingHeart = styled.img`

@@ -17,10 +17,8 @@ export const LoveForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
-  padding-top: 1.5rem;
+  padding: 1.5rem 1rem;
   border-radius: 8px;
-  margin-top: 1rem;
   color: ${(props) => props.theme.colors.dark1};
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5), 0px 3px 2px rgba(0, 0, 0, 0.5);
   opacity: 0;
@@ -28,11 +26,11 @@ export const LoveForm = styled.form`
 `;
 
 export const LoveFormLabel = styled.label`
-  display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2rem;
+  margin: 2rem 0 0 1rem;
   font-weight: bold;
+  text-transform: uppercase;
 `;
 
 export const HeartImgContainer = styled.div`
@@ -59,7 +57,6 @@ export const HeartImg = styled.img`
 
 export const LoveInputContainer = styled.div`
   position: relative;
-  width: 70%;
   margin-top: 0.5rem;
   z-index: 1;
   &::before {

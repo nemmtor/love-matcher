@@ -38,7 +38,7 @@ export default function View({
       <Text>Type in your name and name of your crush</Text>
 
       <LoveFormLabel htmlFor="name1">
-        Your name
+        Name
         <LoveInputContainer>
           <LoveFormInput
             type="text"
@@ -57,7 +57,7 @@ export default function View({
       </LoveFormLabel>
 
       <LoveFormLabel htmlFor="name2">
-        Your crush name
+        Crush name
         <LoveInputContainer>
           <LoveFormInput
             type="text"
