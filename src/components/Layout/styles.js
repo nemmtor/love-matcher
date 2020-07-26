@@ -15,7 +15,7 @@ export const Header = styled.header`
   color: ${(props) => props.theme.colors.pink};
   text-align: right;
   letter-spacing: 2px;
-  padding: 2rem 2rem 0 0;
+  padding: 1rem 2rem 0 0;
   justify-self: flex-end;
   max-width: 60%;
 

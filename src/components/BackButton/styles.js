@@ -15,7 +15,8 @@ const BackBtn = styled.button`
   will-change: transform;
   transition: transform 0.2s ease;
 
-  &:hover {
+  &:hover,
+  &:focus {
     transform: translateY(-5px);
     filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5));
   }

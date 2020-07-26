@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import BackBtn from './styles';
 import { goBackIcon } from '../../assets/index';
 
-export default function BackButton({ text = 'Try again' }) {
+export default function BackButton({ text = 'Try again' }, ref) {
   const history = useHistory();
 
   const routeToRoot = () => {

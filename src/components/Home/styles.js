@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const FormHeader = styled.h2`
+  color: ${(props) => props.theme.colors.pink};
+`;
+
 export const Text = styled.p`
   text-align: center;
   line-height: 1.4;
@@ -29,7 +33,7 @@ export const LoveFormLabel = styled.label`
 
 export const HeartImgContainer = styled.div`
   position: absolute;
-  width: 2.4rem;
+  width: 52px;
   border-radius: 50%;
   background: #fff;
   bottom: -1px;
@@ -97,7 +101,7 @@ export const LoveFormInput = styled.input`
   align-items: center;
   justify-content: center;
   outline: none;
-  padding: 0.5rem 2rem;
+  padding: 1rem 2rem;
   transition: transform 0.3s ease;
   z-index: 100;
   text-align: center;
