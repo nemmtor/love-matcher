@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const Main = styled.main`
-  margin: 1rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 0 2rem;
+  padding: 2rem;
+  overflow-x: hidden;
 `;
 
 export const Header = styled.header`

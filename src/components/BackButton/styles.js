@@ -12,13 +12,12 @@ const BackBtn = styled.button`
   padding: 0.8rem 1.2rem;
   border-radius: 10px;
   cursor: pointer;
-  will-change: transform;
-  transition: transform 0.2s ease;
+  will-change: filter;
+  transition: filter 0.1s linear;
 
   &:hover,
   &:focus {
-    transform: translateY(-5px);
-    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5));
+    filter: brightness(1.2);
   }
 
   img {

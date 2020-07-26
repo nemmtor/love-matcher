@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const FormHeader = styled.h2`
   color: ${(props) => props.theme.colors.pink};
+  line-height: 1;
 `;
 
 export const Text = styled.p`
@@ -16,11 +17,14 @@ export const LoveForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 1rem;
+  padding: 1rem;
+  padding-top: 1.5rem;
   border-radius: 8px;
   margin-top: 1rem;
   color: ${(props) => props.theme.colors.dark1};
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5), 0px 3px 2px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  animation: 'fade-in-slide' 0.3s ease-in forwards;
 `;
 
 export const LoveFormLabel = styled.label`
@@ -36,18 +40,21 @@ export const HeartImgContainer = styled.div`
   width: 52px;
   border-radius: 50%;
   background: #fff;
-  bottom: -1px;
-  top: -1px;
+  bottom: -2px;
+  top: -2px;
   left: -1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: filter 0.2s linear;
 `;
 
 export const HeartImg = styled.img`
   will-change: transform, filter;
   transition: transform 0.2s ease-in, filter 0.2s ease-out;
+  transform: scale(0);
+  animation: 'zoom-in' 0.2s 0.2s linear forwards;
 `;
 
 export const LoveInputContainer = styled.div`
@@ -61,7 +68,7 @@ export const LoveInputContainer = styled.div`
     position: absolute;
     content: '';
     background: #fff;
-    height: 2px;
+    height: 1px;
     width: 100%;
     will-change: transform;
     transition: transform 0.2s linear;
@@ -101,13 +108,14 @@ export const LoveFormInput = styled.input`
   align-items: center;
   justify-content: center;
   outline: none;
-  padding: 1rem 2rem;
+  padding: 1rem 0 1rem 3rem;
   transition: transform 0.3s ease;
   z-index: 100;
-  text-align: center;
+  &:focus ~ ${HeartImgContainer} {
+    filter: drop-shadow(4px 0px 0px #f5cce8);
+  }
   &:focus ~ ${HeartImgContainer} ${HeartImg} {
-    transform: scale(1.2);
-    filter: brightness(0.9);
+    filter: brightness(1.3);
   }
 `;
 
@@ -124,13 +132,15 @@ export const LoveFormSubmit = styled.button`
   margin-top: 2.5rem;
   color: ${(props) => props.theme.colors.dark1};
   cursor: pointer;
-  will-change: color;
-  transition: color 0.3s ease, transform 0.3s ease;
+  will-change: color, transform, filter;
+  transition: color 0.2s linear, transform 0.2s linear, filter 0.2s linear;
+  filter: drop-shadow(0 2px 0 #e01a4f);
 
   &:hover,
   &:focus {
     color: ${(props) => props.theme.colors.pink};
-    transform: translateY(-3px);
+    transform: translateY(2px);
+    filter: none;
     path {
       fill: ${(props) => props.theme.colors.pink};
     }
