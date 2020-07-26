@@ -32,6 +32,10 @@ body {
 #root {
   min-height: 100%;
   background: #edbfc6;
+  background-image: url('/couple.png');
+  background-repeat:no-repeat;
+  background-size: 120px;
+  background-position: top 2rem left 1rem;
   position: relative;
   display: grid;
   grid-template-rows: auto 1fr auto;

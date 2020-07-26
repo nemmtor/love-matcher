@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 import heart from '../../assets/heart.svg';
 
@@ -9,21 +9,26 @@ const Pulse = keyframes`
   100% { transform: scale(1); }
 `;
 
-const Text = styled.p`
+const Text = styled.h2`
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 `;
 
 const PulsingHeart = styled.img`
   height: 150px;
-  animation: ${Pulse} 1s ease infinite;
+  animation: ${(props) =>
+    props.animated
+      ? css`
+          ${Pulse} 1s ease infinite
+        `
+      : ''};
 `;
 
-export default function Loading() {
+export default function Loading({ animated = true }) {
   return (
     <>
-      <Text>Please wait... We are checking your match rating</Text>
-      <PulsingHeart src={heart} />
+      <Text>Please wait...</Text>
+      <PulsingHeart src={heart} animated={animated} />
     </>
   );
 }

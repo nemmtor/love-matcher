@@ -12,10 +12,6 @@ export default function Result({ location }) {
 
   const history = useHistory();
 
-  const routeToRoot = () => {
-    history.push('/');
-  };
-
   const handleError = () => {
     history.push('/error');
   };
@@ -39,12 +35,6 @@ export default function Result({ location }) {
   }, []);
 
   return (
-    <View
-      name1={name1}
-      name2={name2}
-      result={result}
-      isLoading={isLoading}
-      routeToRoot={routeToRoot}
-    />
+    <View name1={name1} name2={name2} result={result} isLoading={isLoading} />
   );
 }

@@ -6,7 +6,8 @@ export const Text = styled.p`
 `;
 
 export const LoveForm = styled.form`
-  max-width: 250px;
+  max-width: 400px;
+  width: 100%;
   background: ${(props) => props.theme.colors.light1};
   display: flex;
   flex-direction: column;
@@ -56,7 +57,7 @@ export const LoveInputContainer = styled.div`
     position: absolute;
     content: '';
     background: #fff;
-    height: 1px;
+    height: 2px;
     width: 100%;
     will-change: transform;
     transition: transform 0.2s linear;

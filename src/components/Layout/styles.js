@@ -1,20 +1,23 @@
 import styled from 'styled-components';
 
-export const Content = styled.main`
+export const Main = styled.main`
   margin: 1rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 300px;
+  width: 100%;
+  padding: 0 2rem;
 `;
 
-export const Title = styled.header`
+export const Header = styled.header`
   font-family: Rubik;
   color: ${(props) => props.theme.colors.pink};
-  text-align: center;
+  text-align: right;
   letter-spacing: 2px;
-  margin-top: 2rem;
+  padding: 2rem 2rem 0 0;
+  justify-self: flex-end;
+  max-width: 60%;
 
   h1 {
     margin: 0;
