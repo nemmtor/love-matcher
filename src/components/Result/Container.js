@@ -19,8 +19,14 @@ export default function Result({ location }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const url = `https://love-matcher-api.herokuapp.com/match?name1=${name1}&name2=${name2}`;
-        const response = await fetch(url);
+        const url = `https://love-matcher-api.herokuapp.com/match`;
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ name1, name2 }),
+        });
         if (response.status !== 200) throw new Error('error');
         const jsonResponse = await response.json();
         const { rating, message } = jsonResponse;
