@@ -34,11 +34,11 @@ export default function View({
 
   return (
     <LoveForm onSubmit={handleSubmit}>
-      <FormHeader>LoveForm</FormHeader>
+      <FormHeader>Form of Love</FormHeader>
       <Text>Type in your name and name of your crush</Text>
 
       <LoveFormLabel htmlFor="name1">
-        Name
+        <span>Name</span>
         <LoveInputContainer>
           <LoveFormInput
             type="text"
@@ -57,7 +57,7 @@ export default function View({
       </LoveFormLabel>
 
       <LoveFormLabel htmlFor="name2">
-        Crush name
+        <span>Crush name</span>
         <LoveInputContainer>
           <LoveFormInput
             type="text"

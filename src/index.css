@@ -16,7 +16,6 @@
 
 html {
   font-family: Karla, sans-serif;
-  height: 100%;
 }
 
 * {
@@ -30,12 +29,8 @@ body {
 }
 
 #root {
-  min-height: 100%;
+  min-height: 100vh;
   background: #edbfc6;
-  background-image: url('/couple.png');
-  background-repeat:no-repeat;
-  background-size: 120px;
-  background-position: top 1rem left 1rem;
   position: relative;
   display: grid;
   grid-template-rows: auto 1fr auto;

@@ -6,8 +6,10 @@ export default function Layout({ children }) {
   return (
     <>
       <Header>
-        <h1>LOVE MATCHER</h1>
-        <p>Find perfect partner!</p>
+        <div>
+          <h1>LOVE MATCHER</h1>
+          <p>Find your crush</p>
+        </div>
       </Header>
       <Main>{children}</Main>
       <Footer>Made with ❤ by Kacper Witas</Footer>
