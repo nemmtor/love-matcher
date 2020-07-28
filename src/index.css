@@ -1,10 +1,12 @@
 @font-face {
   font-family: Rubik;
+  font-display: swap;
   src: local('Rubik'), url(./fonts/Rubik-Regular.ttf) format('truetype');
 }
 
 @font-face {
   font-family: Karla;
+  font-display: swap;
   src: local('Karla'), url(./fonts/Karla-Regular.ttf) format('truetype');
 }
 
