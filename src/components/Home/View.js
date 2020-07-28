@@ -2,7 +2,6 @@ import React from 'react';
 
 import {
   FireImg,
-  FormHeader,
   HeartImg,
   HeartImgContainer,
   LoveForm,
@@ -34,7 +33,6 @@ export default function View({
 
   return (
     <LoveForm onSubmit={handleSubmit}>
-      <FormHeader>Form of Love</FormHeader>
       <Text>Type in your name and name of your crush</Text>
 
       <LoveFormLabel htmlFor="name1">

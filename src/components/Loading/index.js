@@ -28,7 +28,7 @@ const PulsingHeart = styled.img`
 export default function Loading({ animated = true }) {
   return (
     <>
-      <Text>Please wait...</Text>
+      <Text>Loading</Text>
       <PulsingHeart src={heart} animated={animated} />
     </>
   );

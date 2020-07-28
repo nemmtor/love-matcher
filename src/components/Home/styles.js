@@ -1,34 +1,28 @@
 import styled from 'styled-components';
 
-export const FormHeader = styled.h2`
-  color: ${(props) => props.theme.colors.pink};
-  line-height: 1;
-  letter-spacing: -0.05em;
-  font-weight: 400;
-`;
-
 export const Text = styled.p`
   text-align: center;
   line-height: 1.5;
+  margin-bottom: 1rem;
 `;
 
 export const LoveForm = styled.form`
   max-width: 400px;
   width: 100%;
-  background: ${(props) => props.theme.colors.light1};
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 0 2rem;
   border-radius: 6px;
   color: ${(props) => props.theme.colors.dark1};
-  box-shadow: 0 0 15px 1px rgba(224, 26, 79, 0.5);
   opacity: 0;
   animation: 'fade-in-slide' 0.3s ease-in forwards;
 `;
 
 export const LoveFormLabel = styled.label`
-  margin-top: 2rem;
+  margin-bottom: 2rem;
   width: 100%;
   span {
     opacity: 0.8;
@@ -127,7 +121,6 @@ export const LoveFormSubmit = styled.button`
   justify-content: center;
   font-weight: bold;
   border-radius: 4px;
-  margin-top: 2.5rem;
   color: ${(props) => props.theme.colors.light1};
   background: ${(props) => props.theme.colors.pink};
   cursor: pointer;
