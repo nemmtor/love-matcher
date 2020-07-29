@@ -3,6 +3,9 @@ import styled from 'styled-components';
 export const Text = styled.p`
   text-align: center;
   color: ${(props) => props.theme.colors.dark2};
+  transition: opacity 0.5s ease-in-out;
+  will-change: opacity;
+  opacity: ${(props) => (props.isCounting ? 0 : 1)};
 `;
 
 export const Names = styled.p`
@@ -15,8 +18,9 @@ export const Names = styled.p`
 `;
 
 export const ResultImage = styled.img`
-  opacity: 0;
-  animation: 'fade-in' 0.3s ease-in forwards;
+  transition: opacity 0.5s ease-in-out;
+  will-change: opacity;
+  opacity: ${(props) => (props.isCounting ? 0 : 1)};
 `;
 
 export const ScoreContainer = styled.div`
