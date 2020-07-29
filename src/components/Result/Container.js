@@ -12,11 +12,11 @@ export default function Result({ location }) {
 
   const history = useHistory();
 
-  const handleError = () => {
-    history.push('/error');
-  };
-
   useEffect(() => {
+    const handleError = () => {
+      history.push('/error');
+    };
+
     const fetchData = async () => {
       try {
         const url = `https://love-matcher-api.herokuapp.com/match`;
@@ -37,10 +37,9 @@ export default function Result({ location }) {
       }
     };
     fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [name1, name2, history]);
 
   return (
-    <View name1={name1} name2={name2} result={result} isLoading={isLoading} />
+    <View names={{ name1, name2 }} result={result} isLoading={isLoading} />
   );
 }

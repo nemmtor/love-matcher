@@ -14,6 +14,11 @@ export const Names = styled.p`
   font-size: 1.4rem;
 `;
 
+export const ResultImage = styled.img`
+  opacity: 0;
+  animation: 'fade-in' 0.3s ease-in forwards;
+`;
+
 export const ScoreContainer = styled.div`
   display: flex;
   flex-direction: column;
