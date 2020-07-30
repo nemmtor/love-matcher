@@ -38,7 +38,7 @@ export default function Result({ location, names, isLoading, result }) {
       {!isLoading && (
         <Container>
           <Names>
-            {name1} &amp; {name2}
+            {name1} <span>&amp;</span> {name2}
           </Names>
           <Text>Your match rating is</Text>
           <Counter

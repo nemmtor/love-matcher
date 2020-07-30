@@ -127,20 +127,12 @@ export const LoveFormSubmit = styled.button`
   will-change: filter;
   transition: filter 0.2s linear;
   filter: brightness(110%);
-
-  path {
-    fill: ${(props) => props.theme.colors.light1};
-  }
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 
   &:hover,
   &:focus {
     filter: brightness(120%);
     box-shadow: 0 0 2px 1px ${(props) => props.theme.colors.dark2};
   }
-`;
-
-export const FireImg = styled.svg`
-  margin-right: 0.5rem;
-  width: 16px;
-  height: 20px;
 `;

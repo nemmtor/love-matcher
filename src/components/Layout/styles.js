@@ -40,7 +40,6 @@ export const Main = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   width: 100%;
   padding: 1rem 2rem;
   overflow-x: hidden;

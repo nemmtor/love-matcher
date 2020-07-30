@@ -3,10 +3,10 @@ import { useImage } from 'react-image';
 import { useHistory } from 'react-router-dom';
 
 import BackBtn from './styles';
-import { goBackIcon } from '../../assets/index';
+import { back } from '../../assets/index';
 
 const GoBackIcon = () => {
-  const { src } = useImage({ srcList: goBackIcon });
+  const { src } = useImage({ srcList: back });
   return <img src={src} alt="Go back" />;
 };
 

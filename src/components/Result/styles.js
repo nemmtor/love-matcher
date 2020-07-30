@@ -33,8 +33,13 @@ export const Names = styled.p`
   font-weight: bold;
   letter-spacing: 1px;
   color: ${(props) => props.theme.colors.dark1};
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   margin-bottom: 1.5rem;
+
+  span {
+    color: ${(props) => props.theme.colors.pink};
+    font-size: 1.4em;
+  }
 `;
 
 export const ResultImage = styled.img`
