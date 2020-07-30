@@ -114,7 +114,7 @@ export const LoveFormInput = styled.input`
 export const LoveFormSubmit = styled.button`
   border: none;
   background: transparent;
-  padding: 0.6rem 1.6rem;
+  padding: 1rem 2.2rem;
   outline: none;
   display: flex;
   align-items: center;

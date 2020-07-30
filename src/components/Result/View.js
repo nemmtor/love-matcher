@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import CountUp from 'react-countup';
 
 import { angry, sad, happy, fire } from '../../assets';
 import Loading from '../Loading';
 import BackButton from '../BackButton';
-import { Names, ScoreContainer, Text, ResultImage } from './styles';
+import {
+  Names,
+  Text,
+  ResultImage,
+  ResultMessage,
+  Counter,
+  Container,
+} from './styles';
 
 const pickIndex = (rating) => {
   if (rating === 0) return 0;
@@ -30,32 +36,26 @@ export default function Result({ location, names, isLoading, result }) {
     <>
       {isLoading && <Loading />}
       {!isLoading && (
-        <>
+        <Container>
           <Names>
             {name1} &amp; {name2}
           </Names>
           <Text>Your match rating is</Text>
-          <ScoreContainer>
-            <Text>
-              <CountUp
-                end={displayRating}
-                duration={2}
-                decimals={2}
-                delay={1}
-                suffix="%"
-                onEnd={() => setIsCounting(false)}
-              />
-            </Text>
-            <ResultImage
-              src={image}
-              isCounting={isCounting}
-              alt="Result image"
-            />
+          <Counter
+            end={displayRating}
+            duration={2}
+            decimals={2}
+            delay={1}
+            suffix="%"
+            onEnd={() => setIsCounting(false)}
+          />
+          <ResultImage src={image} isVisible={!isCounting} alt="Result image" />
 
-            <Text isCounting={isCounting}>{result.message}</Text>
-          </ScoreContainer>
-          <BackButton />
-        </>
+          <ResultMessage isVisible={!isCounting}>
+            {result.message}
+          </ResultMessage>
+          <BackButton isVisible={!isCounting} />
+        </Container>
       )}
     </>
   );

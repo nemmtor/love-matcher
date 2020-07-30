@@ -14,6 +14,9 @@ const BackBtn = styled.button`
   cursor: pointer;
   will-change: filter;
   transition: filter 0.1s linear;
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transition: opacity 0.5s 0.4s ease-in-out;
+  will-change: opacity;
 
   &:hover,
   &:focus {

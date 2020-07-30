@@ -10,7 +10,10 @@ const GoBackIcon = () => {
   return <img src={src} alt="Go back" />;
 };
 
-export default function BackButton({ text = 'Try again' }, ref) {
+export default function BackButton(
+  { text = 'Try again', isVisible = true },
+  ref,
+) {
   const history = useHistory();
 
   const routeToRoot = () => {
@@ -18,7 +21,7 @@ export default function BackButton({ text = 'Try again' }, ref) {
   };
 
   return (
-    <BackBtn type="Button" onClick={routeToRoot}>
+    <BackBtn type="Button" isVisible={isVisible} onClick={routeToRoot}>
       <GoBackIcon />
       {text}
     </BackBtn>
