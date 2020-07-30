@@ -24,6 +24,7 @@ export const LoveForm = styled.form`
 export const LoveFormLabel = styled.label`
   margin-bottom: 2rem;
   width: 100%;
+  position: relative;
   span {
     opacity: 0.8;
 
@@ -135,4 +136,13 @@ export const LoveFormSubmit = styled.button`
     filter: brightness(120%);
     box-shadow: 0 0 2px 1px ${(props) => props.theme.colors.dark2};
   }
+`;
+
+export const ErrorMessage = styled.span`
+  will-change: opacity;
+  transition: opacity 0.3s ease;
+  opacity: ${(props) => (props.hasError ? 1 : 0)};
+  color: tomato;
+  animation: 'fade-in' 1s ease forwards;
+  position: absolute;
 `;
