@@ -9,7 +9,7 @@ const BackBtn = styled.button`
   outline: none;
   border: none;
   background: ${(props) => props.theme.colors.pink};
-  padding: 0.8rem 1.2rem;
+  padding: 1rem 2.2rem;
   border-radius: 10px;
   cursor: pointer;
   will-change: filter;
