@@ -3,7 +3,14 @@ import React, { useEffect, useState } from 'react';
 import { angry, sad, happy, fire } from '../../assets';
 import Loading from '../Loading';
 import BackButton from '../BackButton';
-import { Names, ScoreContainer, Text, ResultImage } from './styles';
+import {
+  Names,
+  Text,
+  ResultImage,
+  ResultMessage,
+  Counter,
+  Container,
+} from './styles';
 
 const pickIndex = (rating) => {
   if (rating === 0) return 0;
@@ -12,12 +19,9 @@ const pickIndex = (rating) => {
   return index;
 };
 
-const Image = ({ src }) => {
-  return <ResultImage src={src} alt="Result image" />;
-};
-
 export default function Result({ location, names, isLoading, result }) {
   const [image, setImage] = useState('');
+  const [isCounting, setIsCounting] = useState(true);
 
   useEffect(() => {
     const icons = [angry, sad, happy, fire];
@@ -26,23 +30,32 @@ export default function Result({ location, names, isLoading, result }) {
   }, [result.rating]);
 
   const { name1, name2 } = names;
+  const displayRating = Math.ceil(result.rating * 100);
 
   return (
     <>
       {isLoading && <Loading />}
       {!isLoading && (
-        <>
+        <Container>
           <Names>
             {name1} &amp; {name2}
           </Names>
           <Text>Your match rating is</Text>
-          <ScoreContainer>
-            <Image src={image} />
-            <Text>{`${Math.ceil(result.rating * 100)}%`}</Text>
-            <Text>{result.message}</Text>
-          </ScoreContainer>
-          <BackButton />
-        </>
+          <Counter
+            end={displayRating}
+            duration={2}
+            decimals={2}
+            delay={1}
+            suffix="%"
+            onEnd={() => setIsCounting(false)}
+          />
+          <ResultImage src={image} isVisible={!isCounting} alt="Result image" />
+
+          <ResultMessage isVisible={!isCounting}>
+            {result.message}
+          </ResultMessage>
+          <BackButton isVisible={!isCounting} />
+        </Container>
       )}
     </>
   );
