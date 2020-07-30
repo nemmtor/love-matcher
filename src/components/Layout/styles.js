@@ -7,7 +7,7 @@ export const Header = styled.header`
   padding: 1rem 2rem;
   width: 100%;
   justify-self: flex-end;
-  /* overflow: auto; */
+  overflow: auto;
   background-image: url('/couple.png');
   background-repeat: no-repeat;
   background-size: auto 8rem;
@@ -56,7 +56,7 @@ export const Main = styled.main`
   align-items: center;
   width: 100%;
   padding: 1rem 2rem;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 `;
 
 export const Footer = styled.footer`
