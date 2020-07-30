@@ -13,10 +13,6 @@ export default function Result({ location }) {
   const history = useHistory();
 
   useEffect(() => {
-    const handleError = () => {
-      history.push('/error');
-    };
-
     const fetchData = async () => {
       try {
         const url = `https://love-matcher-api.herokuapp.com/match`;
@@ -33,7 +29,7 @@ export default function Result({ location }) {
         setResult({ rating, message });
         setIsLoading(false);
       } catch (error) {
-        handleError();
+        history.push('/error');
       }
     };
     fetchData();

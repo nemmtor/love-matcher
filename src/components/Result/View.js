@@ -27,7 +27,6 @@ export default function Result({ location, names, isLoading, result }) {
     const icons = [angry, sad, happy, fire];
     const chosenIcon = icons[pickIndex(result.rating)];
     setImage(chosenIcon);
-    throw new Error('XD');
   }, [result.rating]);
 
   const { name1, name2 } = names;

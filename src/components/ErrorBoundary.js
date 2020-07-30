@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Error from './Error';
-
 export default class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
@@ -16,7 +14,12 @@ export default class ErrorBoundary extends React.Component {
     const { hasError } = this.state;
     const { children } = this.props;
     if (hasError) {
-      return <Error />;
+      return (
+        <p>
+          Something went wrong, please open issue at{' '}
+          <a href="https://github.com/nemmtor/love-matcher/issues">GitHub</a>
+        </p>
+      );
     }
     return children;
   }
