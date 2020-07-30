@@ -8,7 +8,7 @@ const BackBtn = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: ${(props) => props.theme.colors.main};
+  color: #fff;
   font-weight: bold;
   outline: none;
   border: none;

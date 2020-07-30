@@ -65,7 +65,7 @@ export const Form = styled.form`
     justify-content: center;
     font-weight: bold;
     border-radius: 4px;
-    color: ${(props) => props.theme.colors.main};
+    color: #fff;
     background: ${(props) => props.theme.colors.contrast};
     cursor: pointer;
     will-change: filter;

@@ -18,10 +18,14 @@ const Container = styled.div`
   }
 `;
 
+const BrokenHeart = styled.img`
+  height: 10rem;
+`;
+
 export default function Error() {
   return (
     <Container>
-      <img src={brokenHeart} alt="Broken Heart" />
+      <BrokenHeart src={brokenHeart} alt="Broken Heart" />
       <h2>Oops! Something went wrong!</h2>
       <BackButton />
     </Container>
