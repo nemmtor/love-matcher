@@ -7,7 +7,7 @@ export const Header = styled.header`
   padding: 1rem 2rem;
   width: 100%;
   justify-self: flex-end;
-  overflow: auto;
+  /* overflow: auto; */
   background-image: url('/couple.png');
   background-repeat: no-repeat;
   background-size: auto 8rem;
@@ -17,6 +17,7 @@ export const Header = styled.header`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  position: relative;
 
   div {
     max-width: 60%;
@@ -34,6 +35,19 @@ export const Header = styled.header`
     line-height: 1.5;
     font-size: 0.9rem;
   }
+
+  &::after {
+    content: '';
+    height: 150px;
+    width: 150px;
+    background: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: ${(props) => props.theme.colors.pink};
+  }
 `;
 
 export const Main = styled.main`
@@ -42,7 +56,7 @@ export const Main = styled.main`
   align-items: center;
   width: 100%;
   padding: 1rem 2rem;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 `;
 
 export const Footer = styled.footer`

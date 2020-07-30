@@ -16,7 +16,7 @@ export const LoveForm = styled.form`
   align-items: center;
   padding: 0 2rem;
   border-radius: 6px;
-  color: ${(props) => props.theme.colors.dark1};
+  color: ${(props) => props.theme.colors.dark2};
   opacity: 0;
   animation: 'fade-in-slide' 0.3s ease-in forwards;
 `;
@@ -99,7 +99,7 @@ export const HeartImg = styled.img`
 export const LoveFormInput = styled.input`
   background: transparent;
   border: none;
-  color: ${(props) => props.theme.colors.dark1};
+  color: ${(props) => props.theme.colors.dark2};
   outline: none;
   padding: 1rem 0 1rem 3rem;
   transition: transform 0.3s ease;
