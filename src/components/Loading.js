@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { keyframes, css } from 'styled-components';
 
-import heart from '../../assets/heart.svg';
+import heart from '../assets/heart.svg';
 
 const Pulse = keyframes`
 0% { transform: scale(0.8); }

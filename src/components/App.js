@@ -1,14 +1,14 @@
 import React, { lazy, Suspense } from 'react';
-import { HashRouter, Route, Switch, useLocation } from 'react-router-dom';
+import { Route, Switch, useLocation } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
 import ErrorBoundary from './ErrorBoundary';
 import Layout from './Layout';
 import Loading from './Loading';
 
-const Error = lazy(() => import('./Error'));
-const Home = lazy(() => import('./Home'));
-const Result = lazy(() => import('./Result'));
+const ErrorPage = lazy(() => import('./views/ErrorPage'));
+const HomePage = lazy(() => import('./views/HomePage'));
+const ResultPage = lazy(() => import('./views/ResultPage'));
 
 const theme = {
   colors: {
@@ -24,17 +24,15 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <Layout>
-        <HashRouter>
-          <Suspense fallback={<Loading animated={false} />}>
-            <ErrorBoundary key={location.pathname}>
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route exact path="/result" component={Result} />
-                <Route component={Error} />
-              </Switch>
-            </ErrorBoundary>
-          </Suspense>
-        </HashRouter>
+        <Suspense fallback={<Loading animated={false} />}>
+          <ErrorBoundary key={location.pathname}>
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route exact path="/result" component={ResultPage} />
+              <Route component={ErrorPage} />
+            </Switch>
+          </ErrorBoundary>
+        </Suspense>
       </Layout>
     </ThemeProvider>
   );

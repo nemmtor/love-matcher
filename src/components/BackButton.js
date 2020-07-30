@@ -1,4 +1,8 @@
+import React from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
+
+import { back } from '../assets/index';
 
 const BackBtn = styled.button`
   display: flex;
@@ -31,4 +35,20 @@ const BackBtn = styled.button`
   }
 `;
 
-export default BackBtn;
+export default function BackButton(
+  { text = 'Try again', isVisible = true },
+  ref,
+) {
+  const history = useHistory();
+
+  const routeToRoot = () => {
+    history.push('/');
+  };
+
+  return (
+    <BackBtn type="Button" isVisible={isVisible} onClick={routeToRoot}>
+      <img src={back} alt="Go back" />
+      {text}
+    </BackBtn>
+  );
+}

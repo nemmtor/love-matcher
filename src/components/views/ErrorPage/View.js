@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { brokenHeart } from '../../assets';
-import BackButton from '../BackButton';
+import { brokenHeart } from '../../../assets';
+import BackButton from '../../BackButton';
 import Header from './styles';
 
 const Container = styled.div`

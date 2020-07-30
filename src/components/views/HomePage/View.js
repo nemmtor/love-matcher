@@ -13,7 +13,7 @@ import {
   Text,
 } from './styles';
 
-import heart from '../../assets/heart.svg';
+import heart from '../../../assets/heart.svg';
 
 export default function View({
   handleChange,

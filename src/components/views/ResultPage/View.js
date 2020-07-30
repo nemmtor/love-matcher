@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-import { angry, sad, happy, fire } from '../../assets';
-import Loading from '../Loading';
-import BackButton from '../BackButton';
+import { angry, sad, happy, fire } from '../../../assets';
+import Loading from '../../Loading';
+import BackButton from '../../BackButton';
 import {
   Names,
   Text,
