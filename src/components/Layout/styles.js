@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Header = styled.header`
-  font-family: Rubik;
+  font-family: Rubik, sans-serif;
   color: ${(props) => props.theme.colors.contrast};
   text-align: right;
   padding: 1rem 2rem;
@@ -60,7 +60,7 @@ export const Main = styled.main`
 `;
 
 export const Footer = styled.footer`
-  font-family: Rubik;
+  font-family: Rubik, sans-serif;
   text-align: center;
   background: ${(props) => props.theme.colors.secondary};
   color: ${(props) => props.theme.colors.main};
