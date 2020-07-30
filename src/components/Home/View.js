@@ -23,7 +23,6 @@ export default function View({
 }) {
   const { register, handleSubmit, errors } = useForm();
 
-  // TODO: Write own hook which will handle both focus nad blur
   const handleFocus = (e) => {
     const parent = e.target.parentElement;
     parent.classList.add('focused');
@@ -48,13 +47,25 @@ export default function View({
             autoComplete="off"
             onFocus={handleFocus}
             onBlur={handleBlur}
-            ref={register({ required: true })}
+            ref={register({
+              required: true,
+              minLength: 3,
+              maxLength: 20,
+              pattern: /[a-zA-Z]+/,
+            })}
           />
           <HeartImgContainer>
             <HeartImg src={heart} alt="Heart" />
           </HeartImgContainer>
         </LoveInputContainer>
-        {errors.name1 && <ErrorMessage>Error</ErrorMessage>}
+        <ErrorMessage>
+          {errors.name1?.type === 'required' && 'This field is required'}
+          {errors.name1?.type === 'minLength' &&
+            'Name is too short (min 3 characters)'}
+          {errors.name1?.type === 'maxLength' &&
+            'Name is too long (max 20 characters)'}
+          {errors.name1?.type === 'pattern' && 'Please use only letter'}
+        </ErrorMessage>
       </LoveFormLabel>
 
       <LoveFormLabel htmlFor="name2">
@@ -67,13 +78,25 @@ export default function View({
             autoComplete="off"
             onFocus={handleFocus}
             onBlur={handleBlur}
-            ref={register({ required: true })}
+            ref={register({
+              required: true,
+              minLength: 3,
+              maxLength: 20,
+              pattern: /[a-zA-Z]+/,
+            })}
           />
           <HeartImgContainer>
             <HeartImg src={heart} alt="Heart" />
           </HeartImgContainer>
         </LoveInputContainer>
-        {errors.name2 && <ErrorMessage>Error</ErrorMessage>}
+        <ErrorMessage>
+          {errors.name2?.type === 'required' && 'This field is required'}
+          {errors.name2?.type === 'minLength' &&
+            'Name is too short (min 3 characters)'}
+          {errors.name2?.type === 'maxLength' &&
+            'Name is too long (max 20 characters)'}
+          {errors.name2?.type === 'pattern' && 'Please use only letter'}
+        </ErrorMessage>
       </LoveFormLabel>
       <LoveFormSubmit type="submit">Check rating</LoveFormSubmit>
     </LoveForm>
