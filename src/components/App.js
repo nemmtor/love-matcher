@@ -6,7 +6,7 @@ import ErrorBoundary from './ErrorBoundary';
 import Layout from './Layout';
 import Loading from './Loading';
 
-const ErrorPage = lazy(() => import('./views/ErrorPage'));
+const Error = lazy(() => import('./Error'));
 const HomePage = lazy(() => import('./views/HomePage'));
 const ResultPage = lazy(() => import('./views/ResultPage'));
 
@@ -29,7 +29,7 @@ export default function App() {
             <Switch>
               <Route exact path="/" component={HomePage} />
               <Route exact path="/result" component={ResultPage} />
-              <Route component={ErrorPage} />
+              <Route component={Error} />
             </Switch>
           </ErrorBoundary>
         </Suspense>

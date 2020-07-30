@@ -1,17 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-import {
-  ErrorMessage,
-  HeartImg,
-  HeartImgContainer,
-  LoveForm,
-  LoveFormLabel,
-  LoveFormInput,
-  LoveInputContainer,
-  LoveFormSubmit,
-  Text,
-} from './styles';
+import { Error, HeartImgContainer, Form, InputContainer } from './styles';
 
 import heart from '../../../assets/heart.svg';
 
@@ -34,13 +24,13 @@ export default function View({
   };
 
   return (
-    <LoveForm onSubmit={handleSubmit(onSubmit)}>
-      <Text>Type in your name and name of your crush</Text>
+    <Form onSubmit={handleSubmit(onSubmit)}>
+      <p>Type in your name and name of your crush</p>
 
-      <LoveFormLabel htmlFor="name1">
+      <label htmlFor="name1">
         <span>Name</span>
-        <LoveInputContainer>
-          <LoveFormInput
+        <InputContainer>
+          <input
             type="text"
             id="name1"
             name="name1"
@@ -55,23 +45,23 @@ export default function View({
             })}
           />
           <HeartImgContainer>
-            <HeartImg src={heart} alt="Heart" />
+            <img src={heart} alt="Heart" />
           </HeartImgContainer>
-        </LoveInputContainer>
-        <ErrorMessage>
+        </InputContainer>
+        <Error>
           {errors.name1?.type === 'required' && 'This field is required'}
           {errors.name1?.type === 'minLength' &&
             'Name is too short (min 3 characters)'}
           {errors.name1?.type === 'maxLength' &&
             'Name is too long (max 20 characters)'}
           {errors.name1?.type === 'pattern' && 'Please use only letter'}
-        </ErrorMessage>
-      </LoveFormLabel>
+        </Error>
+      </label>
 
-      <LoveFormLabel htmlFor="name2">
+      <label htmlFor="name2">
         <span>Crush name</span>
-        <LoveInputContainer>
-          <LoveFormInput
+        <InputContainer>
+          <input
             type="text"
             id="name2"
             name="name2"
@@ -86,19 +76,19 @@ export default function View({
             })}
           />
           <HeartImgContainer>
-            <HeartImg src={heart} alt="Heart" />
+            <img src={heart} alt="Heart" />
           </HeartImgContainer>
-        </LoveInputContainer>
-        <ErrorMessage>
+        </InputContainer>
+        <Error>
           {errors.name2?.type === 'required' && 'This field is required'}
           {errors.name2?.type === 'minLength' &&
             'Name is too short (min 3 characters)'}
           {errors.name2?.type === 'maxLength' &&
             'Name is too long (max 20 characters)'}
           {errors.name2?.type === 'pattern' && 'Please use only letter'}
-        </ErrorMessage>
-      </LoveFormLabel>
-      <LoveFormSubmit type="submit">Check rating</LoveFormSubmit>
-    </LoveForm>
+        </Error>
+      </label>
+      <button type="submit">Check rating</button>
+    </Form>
   );
 }
