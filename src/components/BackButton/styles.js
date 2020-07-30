@@ -4,11 +4,11 @@ const BackBtn = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: ${(props) => props.theme.colors.light1};
+  color: ${(props) => props.theme.colors.main};
   font-weight: bold;
   outline: none;
   border: none;
-  background: ${(props) => props.theme.colors.pink};
+  background: ${(props) => props.theme.colors.contrast};
   padding: 1rem 2.2rem;
   border-radius: 10px;
   cursor: pointer;
@@ -26,7 +26,7 @@ const BackBtn = styled.button`
   img {
     margin-right: 0.5rem;
     path {
-      fill: ${(props) => props.theme.colors.light1};
+      fill: ${(props) => props.theme.colors.main};
     }
   }
 `;

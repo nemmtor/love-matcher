@@ -16,7 +16,7 @@ export const LoveForm = styled.form`
   align-items: center;
   padding: 0 2rem;
   border-radius: 6px;
-  color: ${(props) => props.theme.colors.dark2};
+  color: ${(props) => props.theme.colors.secondary};
   opacity: 0;
   animation: 'fade-in-slide' 0.3s ease-in forwards;
 `;
@@ -85,7 +85,7 @@ export const HeartImgContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: inset 0 0 2px ${(props) => props.theme.colors.pink};
+  box-shadow: inset 0 0 2px ${(props) => props.theme.colors.contrast};
   cursor: pointer;
   transition: filter 0.2s linear;
 `;
@@ -100,7 +100,7 @@ export const HeartImg = styled.img`
 export const LoveFormInput = styled.input`
   background: transparent;
   border: none;
-  color: ${(props) => props.theme.colors.dark2};
+  color: ${(props) => props.theme.colors.secondary};
   outline: none;
   padding: 1rem 0 1rem 3rem;
   transition: transform 0.3s ease;
@@ -122,8 +122,8 @@ export const LoveFormSubmit = styled.button`
   justify-content: center;
   font-weight: bold;
   border-radius: 4px;
-  color: ${(props) => props.theme.colors.light1};
-  background: ${(props) => props.theme.colors.pink};
+  color: ${(props) => props.theme.colors.main};
+  background: ${(props) => props.theme.colors.contrast};
   cursor: pointer;
   will-change: filter;
   transition: filter 0.2s linear;
@@ -134,7 +134,7 @@ export const LoveFormSubmit = styled.button`
   &:hover,
   &:focus {
     filter: brightness(120%);
-    box-shadow: 0 0 2px 1px ${(props) => props.theme.colors.dark2};
+    box-shadow: 0 0 2px 1px ${(props) => props.theme.colors.secondary};
   }
 `;
 

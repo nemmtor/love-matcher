@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Header = styled.header`
   font-family: Rubik;
-  color: ${(props) => props.theme.colors.pink};
+  color: ${(props) => props.theme.colors.contrast};
   text-align: right;
   padding: 1rem 2rem;
   width: 100%;
@@ -46,7 +46,7 @@ export const Header = styled.header`
     left: 0;
     width: 100%;
     height: 5px;
-    background: ${(props) => props.theme.colors.pink};
+    background: ${(props) => props.theme.colors.contrast};
   }
 `;
 
@@ -62,8 +62,8 @@ export const Main = styled.main`
 export const Footer = styled.footer`
   font-family: Rubik;
   text-align: center;
-  background: ${(props) => props.theme.colors.dark1};
-  color: ${(props) => props.theme.colors.light2};
+  background: ${(props) => props.theme.colors.secondary};
+  color: ${(props) => props.theme.colors.main};
   padding: 0.5rem 0;
   width: 100%;
 `;

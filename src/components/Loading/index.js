@@ -23,7 +23,7 @@ const Text = styled.p`
   font-weight: 400;
   font-size: 1.5rem;
   letter-spacing: 0.2em;
-  color: ${(props) => props.theme.colors.pink};
+  color: ${(props) => props.theme.colors.contrast};
   opacity: 0.8;
 `;
 
