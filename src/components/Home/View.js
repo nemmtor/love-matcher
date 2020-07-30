@@ -1,6 +1,8 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
 
 import {
+  ErrorMessage,
   HeartImg,
   HeartImgContainer,
   LoveForm,
@@ -15,10 +17,12 @@ import heart from '../../assets/heart.svg';
 
 export default function View({
   handleChange,
-  handleSubmit,
+  onSubmit,
   inputValues,
   setInputValues,
 }) {
+  const { register, handleSubmit, errors } = useForm();
+
   // TODO: Write own hook which will handle both focus nad blur
   const handleFocus = (e) => {
     const parent = e.target.parentElement;
@@ -31,7 +35,7 @@ export default function View({
   };
 
   return (
-    <LoveForm onSubmit={handleSubmit}>
+    <LoveForm onSubmit={handleSubmit(onSubmit)}>
       <Text>Type in your name and name of your crush</Text>
 
       <LoveFormLabel htmlFor="name1">
@@ -42,15 +46,15 @@ export default function View({
             id="name1"
             name="name1"
             autoComplete="off"
-            value={inputValues.name1}
-            onChange={handleChange}
             onFocus={handleFocus}
             onBlur={handleBlur}
+            ref={register({ required: true })}
           />
           <HeartImgContainer>
             <HeartImg src={heart} alt="Heart" />
           </HeartImgContainer>
         </LoveInputContainer>
+        {errors.name1 && <ErrorMessage>Error</ErrorMessage>}
       </LoveFormLabel>
 
       <LoveFormLabel htmlFor="name2">
@@ -61,15 +65,15 @@ export default function View({
             id="name2"
             name="name2"
             autoComplete="off"
-            value={inputValues.name2}
-            onChange={handleChange}
             onFocus={handleFocus}
             onBlur={handleBlur}
+            ref={register({ required: true })}
           />
           <HeartImgContainer>
             <HeartImg src={heart} alt="Heart" />
           </HeartImgContainer>
         </LoveInputContainer>
+        {errors.name2 && <ErrorMessage>Error</ErrorMessage>}
       </LoveFormLabel>
       <LoveFormSubmit type="submit">Check rating</LoveFormSubmit>
     </LoveForm>

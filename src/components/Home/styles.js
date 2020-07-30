@@ -136,3 +136,11 @@ export const LoveFormSubmit = styled.button`
     box-shadow: 0 0 2px 1px ${(props) => props.theme.colors.dark2};
   }
 `;
+
+export const ErrorMessage = styled.span`
+  will-change: opacity;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  color: tomato;
+  animation: 'fade-in' 1s ease forwards;
+`;
