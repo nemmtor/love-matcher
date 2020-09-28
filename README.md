@@ -16,9 +16,6 @@ Visit [app](https://love-matcher.netlify.app), fill in form with names, click "c
 
 It sends post request with names to [api](https://github.com/nemmtor/love-matcher-api/blob/master/README.md), after receiving respond it routes to result view.
 
-What is nice about it is that you can send result link to your crush so they will see the result without filling the form.
-
-
 ## Tech stack
 
 - React
