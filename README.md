@@ -1,4 +1,4 @@
-# Love matcher
+# Love matcher ❤
 App made for rating your relation.
 
 [Live](https://love-matcher.netlify.app)
